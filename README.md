@@ -9,6 +9,8 @@
 + I think it is not possible using interrupt cause all digital pins are busy.
 + For keypress detection it's recommended using analogRead function instead of Digital read. It's reliability because yield of the touch button has a TTL logic.
 + Random flicker effect has random delay time every call.
++ Automode based on increase currentMode[0] in the end every entering in loop() func. If automode == 0, it's just not increase number.
++ currentMode[0] just for current mode, and currentMode[1] just for detect change when buttons poolled
 + It's my first repository, yay!
 
 I know, using button pooling inside effects functions is bad. But, it works))

@@ -61,30 +61,31 @@ void setup()
 //xxxxxxxxxxxxxxxxxxxxFUNCTION LOOPxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 //xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-void poolButtons(){
+void poolButtons(){ //there we pooling buttons and change current effect if something pressed
     
   boolean prevB = 0;
   boolean nxtB = 0;
-    if (analogRead(A7) >= 500) {
+    if (analogRead(A7) >= 500) { // next
     delay(500);
     currentMode[1]++;
     prevB = 1;
-    automode = 0;
+    automode = 0; //we need reset automode every button press
   }
-  if (analogRead(A6) >= 500) {
+  if (analogRead(A6) >= 500) { // backward
     delay(500);
     currentMode[1]--;
     nxtB = 1;
     automode = 0;
   }
 
-  if(prevB == 1 && nxtB == 1) automodeEnabled();
-  if (currentMode[1] > 10) currentMode[1] = 1;
-  if (currentMode[1] < 1) currentMode[1] = 10;
-if (currentMode[0] != currentMode[1]){
+  if(prevB == 1 && nxtB == 1) automodeEnabled(); //activate automode 
+  if (currentMode[1] > 10) currentMode[1] = 1; //cycle for 1-10 programmed effects
+  if (currentMode[1] < 1) currentMode[1] = 10; 
+if (currentMode[0] != currentMode[1]){ //if somwthing changed, we apply it
   currentMode[0] = currentMode[1];
   //turnEverythingOff();
-  longjmp(saved_context, 1);
+  longjmp(saved_context, 1); // this reset entry point in stack! We just return in loop() without returning in called function.
+  //before i try to use just loop() function and... received stack overflow)
 }
   
 }
