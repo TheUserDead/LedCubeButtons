@@ -15,7 +15,7 @@ I know, using button pooling inside effects functions is bad. But, it works))
 
 After power on, device running auto mode. If you press any button < or > device stay in this effect.
 
-For return in auto mode you can press < and > buttons for 1-2 sec, you will see the descending column inside the cube, he says the inclusion of the automatic mode.
+For return in auto mode you can press < and > buttons for 1-2 sec and release, you will see the descending column inside the cube, he says the inclusion of the automatic mode.
 That's all folks!
 
 ToDo List:
