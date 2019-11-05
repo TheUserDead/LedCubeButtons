@@ -4,7 +4,7 @@
  Based on http://arduino-diy.com/arduino-svetodiodnyy-kub-4x4x4 sketch
 
 ---Notes---
-+ This sketch uses last two pins (A6, A7) As input for detect keypress. 
++ This sketch uses last two pins (A6, A7) As input for detect keypress. Not all arduinos has A6, A7 pins free, and this pins is INPUT only.
 + It is recommended using sensor buttons like TTP223 for avoid contact boucing effect.
 + I think it is not possible using interrupt cause all digital pins are busy.
 + For keypress detection it's recommended using analogRead function instead of Digital read. It's reliability because yield of the touch button has a TTL logic.
